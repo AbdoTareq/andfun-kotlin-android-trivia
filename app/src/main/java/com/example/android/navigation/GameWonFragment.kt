@@ -20,17 +20,41 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.example.android.navigation.databinding.FragmentGameWonBinding
 
 
 class GameWonFragment : Fragment() {
+    private var _binding: FragmentGameWonBinding? = null
+
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    // Access views from binding not _binding
+    private val binding get() = _binding!!
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        val binding: FragmentGameWonBinding = DataBindingUtil.inflate(
-                inflater, R.layout.fragment_game_won, container, false)
-        return binding.root
+                              savedInstanceState: Bundle?
+    ): View? {
+        _binding = FragmentGameWonBinding.inflate(inflater, container, false)
+        val view = binding.root
+
+        binding.nextMatchButton.setOnClickListener {
+
+            view.findNavController().navigate(R.id.action_gameWonFragment_to_gameFragment)
+
+        }
+
+
+
+        return view
+    }
+
+
+    // to prevent memory leaks
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+
     }
 }
