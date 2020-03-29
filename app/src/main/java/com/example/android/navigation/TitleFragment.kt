@@ -29,7 +29,7 @@ class TitleFragment : Fragment() {
         binding.playButton.setOnClickListener {
             Toast.makeText(context, "good", Toast.LENGTH_SHORT).show()
 
-            view.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
+            view.findNavController().navigate(TitleFragmentDirections.actionTitleFragmentToGameFragment())
 
         }
 
@@ -57,4 +57,6 @@ class TitleFragment : Fragment() {
                 || super.onOptionsItemSelected(item)
 
     }
+
+
 }

@@ -32,6 +32,10 @@ buildscript {
         classpath 'com.android.tools.build:gradle:3.6.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.71"
 
+        // this for safe safeargs plugin  2 step gradle another in app gradle
+        classpath "android.arch.navigation:navigation-safe-args-gradle-plugin:$version_navigation"
+
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }

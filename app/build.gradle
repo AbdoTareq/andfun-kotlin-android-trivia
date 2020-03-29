@@ -5,6 +5,10 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
 
+// this for safe safeargs plugin  2 step gradle another in project gradle
+apply plugin: 'androidx.navigation.safeargs'
+
+
 android {
     compileSdkVersion 29
     dataBinding {
@@ -48,7 +52,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     // for navigation
-    implementation "android.arch.navigation:navigation-fragment-ktx:$version_navigation"
-    implementation "android.arch.navigation:navigation-ui-ktx:$version_navigation"
+    implementation "android.arch.navigation:navigation-fragment-ktx:2.2.1"
+    implementation "android.arch.navigation:navigation-ui-ktx:2.2.1"
 
 }
